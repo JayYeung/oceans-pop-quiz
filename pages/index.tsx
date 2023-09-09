@@ -1,59 +1,93 @@
 import Head from 'next/head';
+import { useState } from 'react';
 
-export default function Home() {
+export default function OceanEquations() {
+  const [showDensitySolution, setShowDensitySolution] = useState(false);
+  const [showDepthSolution, setShowDepthSolution] = useState(false);
+  const [showShadowSolution, setShowShadowSolution] = useState(false);
   return (
     <>
       <Head>
-        <title>StopItch</title>
-        <meta name="description" content="Learn about Epidermi and Stop Itch" />
+        <title>Ocean Equations</title>
+        <meta name="description" content="Learn about key ocean equations" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="text-center">
-        <div className="bg-blue-200 py-4"> 
-          <header className="py-4">
-            <h1 className="text-4xl font-bold">StopItch</h1>
-            <br></br>
-            <nav className="space-x-4">
-              <a href="#top" className="text-lg">Home</a>
-              <a href="#overview" className="text-lg">Overview</a>
-              <a href="#statistics" className="text-lg">Statistics</a>
-              <a href="#treatment" className="text-lg">Treatment</a>
-              <a href="#video" className="text-lg">Online Video</a>
-            </nav>
-          </header>
-        </div>
-        <section id="overview" className="py-4 px-20 text-left">
-          <h2 className="text-2xl font-semibold">Overview</h2>
-          <p>
-          Eczema, also known as atopic dermatitis, is a chronic skin condition that affects millions of people worldwide, including schoolchildren. Australia is among the countries with the highest rate of eczema, with between 10% to 15% of the entire population having the chronic skin condition. The inflammatory skin condition causes inflamed red, itchy, and dry patches of skin that can be uncomfortable and sometimes painful. It can also result in scaly patches, blisters, and ultimately skin infections. Eczema can appear anywhere on the body, but it is most prevalent on the hands, face, and the inside of the elbows and knees. The visible rashes and scarring associated with eczema can lead to social isolation and feelings of low self-esteem, which can further exacerbate the condition, therefore making it vital to raise awareness about eczema, especially among schoolchildren who tend to have “no filters”.
-According to research conducted at the University of Melbourne, study showed that more than one in three infants suffer from eczema. Most children tend to grow out of the skin disease, however, about 10% of children will continue to suffer from eczema into adulthood, making eczema one of the most common chronic conditions affecting the Australian population. 
-          </p>
+      <div className="text-center bg-cover min-h-screen" style={{ backgroundImage: "url('/joseph-barrientos-oQl0eVYd_n8-unsplash.jpg')" }}>
+        
+        <header className="py-4 bg-opacity-60 bg-blue-500">
+          <h1 className="text-4xl font-bold">Ocean Equations</h1>
+          <p className="italic">By <a href="https://jayyeung.vercel.app">Jay Yeung</a></p>
+          <nav className="space-x-4">
+            <a href="#density" className="text-lg">Density</a>
+            <a href="#depth" className="text-lg">Depth</a>
+            <a href="#shadow" className="text-lg">Shadow</a>
+          </nav>
+        </header>
+        
+        <section id="density" className="py-4 px-20 text-left bg-opacity-60 bg-white">
+          <h2 className="text-2xl font-semibold">Density</h2>
+          <p>Equation: Density (D) = Mass (M) / Volume (V)</p>
+          <p>M = Mass of the object
+          <br></br>V = Volume occupied by the object</p>
+          <p>Problem: Calculate the density of a unicorn inflatable filled with air that takes up 0.1 m^3 and weighs 3 lbs.</p>
+          <button 
+            onClick={() => setShowDensitySolution(!showDensitySolution)}
+            className="mt-2 px-2 py-0.5 bg-cyan-500 text-white rounded hover:bg-blue-600 transition duration-300"
+          >
+            Show/Hide Solution
+          </button>
+          {showDensitySolution && (
+            <p>
+              Density (D) = 3 lbs/0.1 m^3
+              <br></br>D = 30 lbs/m^3
+            </p>
+          )}
         </section>
-        <section id="statistics" className="py-4 px-20 text-left">
-          <h2 className="text-2xl font-semibold">Statistics</h2>
-          <p>
-According to research conducted at the University of Melbourne, study showed that more than one in three infants suffer from eczema. Most children tend to grow out of the skin disease, however, about 10% of children will continue to suffer from eczema into adulthood, making eczema one of the most common chronic conditions affecting the Australian population. 
-          </p>
-          <div className="flex justify-center space-x-4">
-            <img src="/image1.jpg" alt="Image 1" />
-            <img src="/image2.jpg" alt="Image 2" />
-          </div>
+        
+        <section id="depth" className="py-4 px-20 text-left bg-opacity-60 bg-white">
+          <h2 className="text-2xl font-semibold">Depth</h2>
+          <p>Equation: Depth (D) = Speed of Sound (V) * Time Taken (T) / 2</p>
+          <p>V = Speed of sound in the medium (e.g., seawater)
+          <br></br>T = Time taken for the soundwave to travel and return</p>
+          <p>Problem: If a soundwave takes 0.86 seconds to travel from the hull of a ship to the bottom of the ocean and back, how deep is the water? (hint- The average speed of sound in seawater is 1533 m/s.)</p>
+          <button 
+            onClick={() => setShowDepthSolution(!showDepthSolution)}
+            className="mt-2 px-2 py-0.5 bg-cyan-500 text-white rounded hover:bg-blue-600 transition duration-300"
+          >
+            Show/Hide Solution
+          </button>
+          {showDepthSolution && (
+            <p>
+              Depth (D) = 1533 m/s * 0.86 s / 2
+              <br></br>D = 659.19 m
+            </p>
+          )}
         </section>
-        <section id="treatment" className="py-4 px-20 text-left">
-          <h2 className="text-2xl font-semibold">How to Treat It</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        
+        <section id="shadow" className="py-4 px-20 text-left bg-opacity-60 bg-white">
+          <h2 className="text-2xl font-semibold">Shadow</h2>
+          <p>Equation: Angle of Shadow (A) / 360 degrees = Known Distance (K) / Total Circumference (C)</p>
+          <p>A = Angle covered by the shadow
+          <br></br>K = Known distance corresponding to the shadow angle
+          <br></br>C = Total circumference or distance to be determined</p>
+          <p>Problem: If a shadow on Earth covers 7.2 degrees, and the known distance is 800 km, what is the total circumference of Earth?</p>
+          <button 
+            onClick={() => setShowShadowSolution(!showShadowSolution)}
+            className="mt-2 px-2 py-0.5 bg-cyan-500 text-white rounded hover:bg-blue-600 transition duration-300"
+          >
+            Show/Hide Solution
+          </button>
+          {showShadowSolution && (
+            <p>
+              7.2 degrees / 360 degrees = 800 km / C
+              <br></br>C ≈ 40000 km
+            </p>
+          )}
         </section>
-        <section id="video" className="py-4 text-left">
-          <h2 className="text-2xl font-semibold px-20">Online Video</h2>
-          <div className="flex justify-center">
-            <div className="relative w-3/5" style={{ paddingBottom: '30.25%' }}>
-              <iframe src="https://www.youtube.com/embed/apiK65tkbq8" title="Online Session" className="absolute top-0 left-0 w-full h-full" allowFullScreen></iframe>
-            </div>
-          </div>
-        </section>
-        <footer className="py-4 text-center text-gray-500 text-sm">
-          &copy; 2023 . All rights reserved.
+        
+        <footer className="w-full py-4 text-center text-gray-500 text-sm bg-opacity-60 bg-blue-500">
+          &copy; 2023 . All rights reserved. By <a href="https://jayyeung.vercel.app">Jay Yeung</a>
         </footer>
       </div>
     </>
