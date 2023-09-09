@@ -13,7 +13,7 @@ export default function OceanEquations() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="text-center bg-cover min-h-screen" style={{ backgroundImage: "url('/joseph-barrientos-oQl0eVYd_n8-unsplash.jpg')" }}>
+      <div className="text-center bg-cover min-h-screen" style={{ backgroundImage: "url('/joseph-barrientos-oQl0eVYd_n8-unsplash.jpg')" }}>``
         
         <header className="py-4 bg-opacity-60 bg-blue-500">
           <h1 className="text-4xl font-bold">Ocean Equations</h1>
@@ -27,7 +27,7 @@ export default function OceanEquations() {
         
         <section id="density" className="py-4 px-20 text-left bg-opacity-60 bg-white">
           <h2 className="text-2xl font-semibold">Density</h2>
-          <p>Equation: Density (D) = Mass (M) / Volume (V)</p>
+          <p>Equation: Density (D) = M/V</p>
           <p>M = Mass of the object
           <br></br>V = Volume occupied by the object</p>
           <p>Problem: Calculate the density of a unicorn inflatable filled with air that takes up 0.1 m^3 and weighs 3 lbs.</p>
@@ -47,7 +47,7 @@ export default function OceanEquations() {
         
         <section id="depth" className="py-4 px-20 text-left bg-opacity-60 bg-white">
           <h2 className="text-2xl font-semibold">Depth</h2>
-          <p>Equation: Depth (D) = Speed of Sound (V) * Time Taken (T) / 2</p>
+          <p>Equation: Depth (D) = V * T / 2</p>
           <p>V = Speed of sound in the medium (e.g., seawater)
           <br></br>T = Time taken for the soundwave to travel and return</p>
           <p>Problem: If a soundwave takes 0.86 seconds to travel from the hull of a ship to the bottom of the ocean and back, how deep is the water? (hint- The average speed of sound in seawater is 1533 m/s.)</p>
@@ -67,7 +67,7 @@ export default function OceanEquations() {
         
         <section id="shadow" className="py-4 px-20 text-left bg-opacity-60 bg-white">
           <h2 className="text-2xl font-semibold">Shadow</h2>
-          <p>Equation: Angle of Shadow (A) / 360 degrees = Known Distance (K) / Total Circumference (C)</p>
+          <p>Equation: A / 360 degrees = K / C</p>
           <p>A = Angle covered by the shadow
           <br></br>K = Known distance corresponding to the shadow angle
           <br></br>C = Total circumference or distance to be determined</p>
