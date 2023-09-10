@@ -13,7 +13,7 @@ export default function OceanEquations() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="text-center bg-cover min-h-screen" style={{ backgroundImage: "url('/joseph-barrientos-oQl0eVYd_n8-unsplash.jpg')" }}>``
+      <div className="text-center bg-cover min-h-screen" style={{ backgroundImage: "url('/joseph-barrientos-oQl0eVYd_n8-unsplash.jpg')" }}>
         
         <header className="py-4 bg-opacity-60 bg-blue-500">
           <h1 className="text-4xl font-bold">Ocean Equations</h1>
