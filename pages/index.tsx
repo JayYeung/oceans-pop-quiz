@@ -130,73 +130,77 @@ export default function MarinePhylumQuiz() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="bg-blue-500 min-h-screen text-white">
+      <div className="bg-gray-100 min-h-screen text-gray-800">
         <div className="container mx-auto px-4 py-8">
-          <header>
-            <h1 className="text-4xl font-bold text-center">Oceans Pop Quiz (EPS 82)</h1>
-            <p className="text-center">By Rebecca Peng</p>
-            <p className="text-center mt-2">Understanding the different animal phylums! Can you name and describe the characteristics of a marine organism that falls in each category?</p>
+          <header className="text-center mb-12">
+            <h1 className="text-5xl font-bold">Oceans Pop Quiz (EPS 82)</h1>
+            <p className="text-xl mt-4">By Rebecca Peng</p>
+            <p className="mt-2">Understanding the different animal phylums! Can you name and describe the characteristics of a marine organism that falls in each category?</p>
           </header>
           
-          <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-8">
+          <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-8">
             {phylums.map((phylum) => (
-              <section key={phylum.id} id={phylum.id} className="bg-white text-black rounded-md p-6 shadow-md">
-                <h2 className="text-2xl font-semibold mb-3">{phylum.name}</h2>
+              <section key={phylum.id} id={phylum.id} className="bg-white text-gray-700 rounded-lg shadow overflow-hidden">
+                <h2 className="text-2xl font-semibold p-4 border-b">{phylum.name}</h2>
                 <img 
                   src={phylum.photo} 
                   alt={`Image of ${phylum.name}`}
-                  className="w-full h-64 object-cover rounded-md mb-3" 
+                  className="w-full h-48 object-cover" 
                 />
-                <button 
-                  onClick={() => toggleReveal(phylum.id)}
-                  className="mb-3 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition duration-300"
-                >
-                  Reveal Characteristics
-                </button>
-                {revealedPhylum[phylum.id] && (
-                  <div>
-                    {phylum.description.split('\n').map((line, lineIndex) => (
-                      <p key={lineIndex} className="mb-2">{line}</p>
-                    ))}
-                  </div>
-                )}
+                <div className="p-4">
+                  <button 
+                    onClick={() => toggleReveal(phylum.id)}
+                    className="mb-3 px-4 py-2 border-2 border-gray-300 text-gray-800 bg-transparent rounded-full transition duration-300 hover:bg-gray-200 hover:shadow-lg transform hover:-translate-y-1"
+                  >
+                    Reveal Characteristics
+                  </button>
+                  {revealedPhylum[phylum.id] && (
+                    <div className="mt-4 space-y-2">
+                      {phylum.description.split('\n').map((line, lineIndex) => (
+                        <p key={lineIndex}>{line}</p>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </section>
             ))}
           </main>
-
-          <section className="container mx-auto px-4 py-8">
-          <h2 className="text-3xl font-bold text-center mb-8">More Ocean Information</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
-            {more_info.map((info) => (
-              <div key={info.title} className="bg-white text-black rounded-md p-6 shadow-md">
-                <h3 className="text-2xl font-semibold mb-3">{info.title}</h3>
-                <img 
-                  src={info.photo} 
-                  alt={`Illustration for ${info.title}`}
-                  className="w-100 h-64 object-cover rounded-md mb-3" 
-                />
-                <button 
-                  onClick={() => toggleRevealInfo(info.title)}
-                  className="mb-3 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition duration-300"
-                >
-                  Reveal Information
-                </button>
-                {revealedInfo[info.title] && (
-                  <div>
-                    {info.bullets.map((bullet, bulletIndex) => (
-                      <p key={bulletIndex} className="mb-2">{bullet}</p>
-                    ))}
+  
+          <section className="my-8">
+            <h2 className="text-3xl font-bold text-center mb-8">More Ocean Information</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {more_info.map((info) => (
+                <div key={info.title} className="bg-white text-gray-700 rounded-lg shadow overflow-hidden">
+                  <h3 className="text-2xl font-semibold p-4 border-b">{info.title}</h3>
+                  <img 
+                    src={info.photo} 
+                    alt={`Illustration for ${info.title}`}
+                    className="w-full h-48 object-cover" 
+                  />
+                  <div className="p-4">
+                    <button 
+                      onClick={() => toggleRevealInfo(info.title)}
+                      className="mb-3 px-4 py-2 border-2 border-gray-300 text-gray-800 bg-transparent rounded-full transition duration-300 hover:bg-gray-200 hover:shadow-lg transform hover:-translate-y-1"
+                    >
+                      Reveal Information
+                    </button>
+                    {revealedInfo[info.title] && (
+                      <div className="mt-4 space-y-2">
+                        {info.bullets.map((bullet, bulletIndex) => (
+                          <p key={bulletIndex}>{bullet}</p>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </section>
-
+                </div>
+              ))}
+            </div>
+          </section>
+  
         </div>
       </div>
     </>
-  );
+  );  
 }
 
 
