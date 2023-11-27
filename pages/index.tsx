@@ -175,7 +175,7 @@ export default function MarinePhylumQuiz() {
                   <img 
                     src={info.photo} 
                     alt={`Illustration for ${info.title}`}
-                    className="w-full h-48 object-cover" 
+                    className="w-100 h-64 object-cover" 
                   />
                   <div className="p-4">
                     <button 
