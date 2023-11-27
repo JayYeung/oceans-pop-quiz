@@ -1,22 +1,23 @@
-// pages/index.js
-
-import Head from 'next/head';
 import { useState } from 'react';
+import Head from 'next/head';
+
+type RevealState = {
+  [key: string]: boolean;
+};
 
 export default function MarinePhylumQuiz() {
-  const [revealedPhylum, setRevealedPhylum] = useState({});
+  const [revealedPhylum, setRevealedPhylum] = useState<RevealState>({});
+  const [revealedInfo, setRevealedInfo] = useState<RevealState>({});
 
-  const toggleReveal = (id) => {
-    setRevealedPhylum((prevState) => ({
+  const toggleReveal = (id: string) => {
+    setRevealedPhylum((prevState: RevealState) => ({
       ...prevState,
       [id]: !prevState[id]
     }));
   };
 
-  const [revealedInfo, setRevealedInfo] = useState({});
-
-  const toggleRevealInfo = (title) => {
-    setRevealedInfo((prevState) => ({
+  const toggleRevealInfo = (title: string) => {
+    setRevealedInfo((prevState: RevealState) => ({
       ...prevState,
       [title]: !prevState[title]
     }));
